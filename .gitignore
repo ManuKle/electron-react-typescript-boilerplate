@@ -33,7 +33,10 @@ node_modules
 
 # App packaged
 release
-app
+app/dist
+app/app.html
+app/main.prod.js
+app/main.prod.js.map
 dll
 
 .idea
