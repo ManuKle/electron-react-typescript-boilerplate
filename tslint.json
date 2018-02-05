@@ -1,0 +1,15 @@
+{
+  "extends": ["tslint-config-airbnb", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "import-name": false,
+    "function-name": false,
+    "jsx-no-multiline-js": false,
+    "variable-name": false,
+    "max-line-length": false,
+    "jsx-no-lambda": false,
+    "align": false,
+    "jsx-wrap-multiline": false,
+    "ter-indent": false,
+    "no-increment-decrement": false
+  }
+}

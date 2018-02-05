@@ -1,0 +1,88 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "allowJs": false,
+    "checkJs": false,
+    "jsx": "react",
+    "importHelpers": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noStrictGenericChecks": true,
+    "sourceMap": true,
+    "lib": ["dom", "es2016", "es7"],
+    "baseUrl": ".",
+    "paths": {
+      "@act/*": ["src/Renderer/actions/*"],
+      "@con/*": ["src/Renderer/containers/*"],
+      "@com/*": ["src/Renderer/components/*"],
+      "@red/*": ["src/Renderer/reducers/*"],
+      "@utils/*": ["src/Main/utils/*"]
+    },
+    "rootDir": "src",
+    "outDir": "app",
+    "noEmitOnError": false,
+    "pretty": true,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings/*",
+      "./app/node_modules/@types"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "useTranspileModule": true,
+    "transpileOnly": true,
+    "useBabel": true,
+    "useCache": true
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    ".awcache",
+    ".chrome",
+    ".sass-cache",
+    ".storybook",
+    ".vscode",
+    "node_modules"
+  ],
+  "externalTranspiler": {
+    "name": "babel",
+    "options": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": 6
+            },
+            "useBuiltIns": true
+          }
+        ],
+        "stage-0",
+        "react"
+      ],
+      "plugins": ["add-module-exports"],
+      "env": {
+        "production": {
+          "presets": ["react-optimize"],
+          "plugins": ["babel-plugin-dev-expression"]
+        },
+        "development": {
+          "plugins": [
+            "transform-class-properties",
+            "transform-es2015-classes",
+            "react-hot-loader/babel"
+          ]
+        }
+      }
+    }
+  }
+}
