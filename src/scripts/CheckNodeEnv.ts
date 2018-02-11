@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import { default as chalk } from "chalk";
 
 export default function CheckNodeEnv(expectedEnv: string) {
   if (!expectedEnv) {

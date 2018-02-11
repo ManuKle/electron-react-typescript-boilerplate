@@ -1,8 +1,8 @@
-import chalk from "chalk";
+import { default as chalk } from "chalk";
 import * as fs from "fs";
 import { execSync } from "child_process";
 // @ts-ignore
-import { dependencies } from "../../app/package.json";
+import { dependencies } from "../package.json";
 
 (() => {
   if (!dependencies) return;

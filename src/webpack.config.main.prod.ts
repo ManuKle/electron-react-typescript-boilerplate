@@ -8,8 +8,8 @@ import * as merge from "webpack-merge";
 import * as UglifyJSPlugin from "uglifyjs-webpack-plugin";
 import * as CopyWebpackPlugin from "copy-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-import baseConfig from "./webpack.config.base";
-import CheckNodeEnv from "./scripts/CheckNodeEnv";
+import { default as baseConfig } from "./webpack.config.base";
+import { default as CheckNodeEnv } from "./scripts/CheckNodeEnv";
 
 CheckNodeEnv("production");
 

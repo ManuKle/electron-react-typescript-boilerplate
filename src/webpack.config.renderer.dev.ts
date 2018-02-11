@@ -5,15 +5,15 @@
  * https://webpack.js.org/concepts/hot-module-replacement/
  */
 
-import chalk from "chalk";
+import { default as chalk } from "chalk";
 import * as path from "path";
 import * as fs from "fs";
 import * as webpack from "webpack";
 import * as merge from "webpack-merge";
 import { spawn, execSync } from "child_process";
 import * as ExtractTextPlugin from "extract-text-webpack-plugin";
-import baseConfig from "./webpack.config.base";
-import CheckNodeEnv from "./scripts/CheckNodeEnv";
+import { default as baseConfig } from "./webpack.config.base";
+import { default as CheckNodeEnv } from "./scripts/CheckNodeEnv";
 
 CheckNodeEnv("development");
 

@@ -1,7 +1,7 @@
 {
   "name": "electron-react-typescript-boilerplate",
   "productName": "ElectronReactTypescript",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description":
     "Electron application boilerplate based on React, Typescript, React Router, Webpack, React Hot Loader for rapid application development",
   "scripts": {
@@ -21,7 +21,7 @@
     "package-linux": "npm run build && build --linux",
     "package-win": "npm run build && build --win --x64",
     "postinstall":
-      "node -r babel-register src/scripts/CheckNativeDep.ts && npm run build-dll && electron-builder install-app-deps && node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
+      "node -r ts-node/register src/scripts/CheckNativeDep.ts && npm run build-dll && electron-builder install-app-deps && node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
     "prestart": "npm run build",
     "start": "cross-env NODE_ENV=production electron ./app/main.prod.js",
     "start-main-dev":
@@ -104,7 +104,8 @@
     "moduleFileExtensions": ["ts", "tsx", "js", "json"],
     "setupFiles": [
       "<rootDir>/src/Main/utils/tempPolyFills.ts",
-      "<rootDir>/src/Main/utils/enzyme_setup.ts"
+      "<rootDir>/src/Main/utils/enzyme_setup.ts",
+      "<rootDir>/src/scripts/CheckBuildsExist.ts"
     ],
     "snapshotSerializers": ["enzyme-to-json/serializer"],
     "transform": {
@@ -147,7 +148,6 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dev-expression": "^0.2.1",
-    "babel-plugin-dynamic-import-webpack": "^1.0.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-classes": "^6.24.1",
     "babel-polyfill": "^6.26.0",

@@ -10,7 +10,7 @@
  */
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
-import MenuBuilder, { DebugWindow } from "./utils/menu";
+import { default as MenuBuilder, DebugWindow } from "@utils/menu";
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -25,7 +25,7 @@ if (
 ) {
   require("electron-debug")();
   const path = require("path");
-  const p = path.join(__dirname, "..", "app", "node_modules");
+  const p = path.join(__dirname, "..", "node_modules");
   require("module").globalPaths.push(p);
 }
 
