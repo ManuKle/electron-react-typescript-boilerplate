@@ -4,7 +4,7 @@ import * as path from "path";
 import * as fs from "fs";
 
 function CheckBuildsExist() {
-  const mainPath = path.join(__dirname, "..", "..", "app", "main.prod.js");
+  const mainPath = path.join(__dirname, "..", "..", "src", "main.prod.js");
   const rendererPath = path.join(
     __dirname,
     "..",

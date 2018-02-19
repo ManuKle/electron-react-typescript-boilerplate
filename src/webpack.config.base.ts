@@ -32,7 +32,7 @@ const baseConfig = {
   },
 
   output: {
-    path: path.join(__dirname, "..", "app"),
+    path: path.join(__dirname),
     filename: "renderer.dev.js",
     // https://github.com/webpack/webpack/issues/1114
     libraryTarget: "commonjs2",

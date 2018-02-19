@@ -22,7 +22,7 @@ export default merge.smart(baseConfig as any, {
   entry: ["babel-polyfill", "./src/Renderer/index"],
 
   output: {
-    path: path.join(__dirname, "../app/dist"),
+    path: path.join(__dirname, "./dist"),
     publicPath: "./",
     filename: "renderer.prod.js"
   },

@@ -26,14 +26,14 @@
       "@utils/*": ["src/Main/utils/*"]
     },
     "rootDir": "src",
-    "outDir": "app",
+    "outDir": "src",
     "noEmitOnError": false,
     "pretty": true,
     "moduleResolution": "node",
     "typeRoots": [
       "./node_modules/@types",
       "./typings/*",
-      "./app/node_modules/@types"
+      "./src/node_modules/@types"
     ],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true

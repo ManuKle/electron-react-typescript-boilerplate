@@ -15,7 +15,7 @@
     "dev":
       "cross-env START_HOT=1 process.env.TS_NODE_DISABLE_WARNINGS=true npm run start-renderer-dev",
     "electron-rebuild":
-      "electron-rebuild --parallel --force --types prod,dev,optional --module-dir app",
+      "electron-rebuild --parallel --force --types prod,dev,optional --module-dir src",
     "package": "npm run build && build --publish never",
     "package-all": "npm run build && build -mwl",
     "package-linux": "npm run build && build --linux",
@@ -34,6 +34,7 @@
     "analyze-build": "cross-env OPEN_ANALYZER=true npm run build"
   },
   "browserslist": "electron 1.6",
+  "main": "./src/main.prod.js",
   "build": {
     "productName": "ElectronReactTypescript",
     "appId": "org.develar.ElectronReactTypescript",
@@ -69,7 +70,7 @@
     "directories": {
       "buildResources": "resources",
       "output": "release",
-      "app": "app"
+      "app": "src"
     }
   },
   "repository": {
@@ -118,7 +119,7 @@
         "<rootDir>/fileMock.js",
       "\\.(css|less|sass|scss)$": "identity-obj-proxy"
     },
-    "moduleDirectories": ["node_modules", "app/node_modules"]
+    "moduleDirectories": ["node_modules", "src/node_modules"]
   },
   "devDependencies": {
     "@types/copy-webpack-plugin": "^4.0.1",

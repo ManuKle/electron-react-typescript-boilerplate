@@ -33,7 +33,7 @@ ${chalk.whiteBright.bgYellow.bold(
       )}
 ${chalk.bold(filteredRootDependencies.join(", "))} ${
         plural ? "are native dependencies" : "is a native dependency"
-      } and should be installed inside of the "./app" folder.
+      } and should be installed inside of the "./src" folder.
 
 
 First uninstall the packages from "./package.json":
@@ -44,8 +44,8 @@ ${chalk.bold(
       )}
 ${chalk.whiteBright.bgRed.bold("npm install your-package --save")}
 
-${chalk.bold('Install the package to "./app/package.json"')}
-${chalk.whiteBright.bgGreen.bold("cd ./app && npm install your-package --save")}
+${chalk.bold('Install the package to "./src/package.json"')} 
+${chalk.whiteBright.bgGreen.bold("cd ./src && npm install your-package --save")}
 
 
 Read more about native dependencies at:
