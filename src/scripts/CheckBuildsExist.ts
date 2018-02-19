@@ -9,7 +9,7 @@ function CheckBuildsExist() {
     __dirname,
     "..",
     "..",
-    "app",
+    "src",
     "dist",
     "renderer.prod.js"
   );

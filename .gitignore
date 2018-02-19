@@ -34,9 +34,9 @@ src/node_modules
 
 # App packaged
 release
-src/dist 
-src/app.html 
-src/main.prod.js 
+src/dist
+src/app.html
+src/main.prod.js
 src/main.prod.js.map
 dll
 

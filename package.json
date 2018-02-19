@@ -2,36 +2,30 @@
   "name": "electron-react-typescript-boilerplate",
   "productName": "ElectronReactTypescript",
   "version": "0.1.1",
-  "description":
-    "Electron application boilerplate based on React, Typescript, React Router, Webpack, React Hot Loader for rapid application development",
+  "description": "Electron application boilerplate based on React, Typescript, React Router, Webpack, React Hot Loader for rapid application development",
   "scripts": {
     "build": "concurrently \"npm run build-main\" \"npm run build-renderer\"",
-    "build-dll":
-      "cross-env NODE_ENV=development process.env.TS_NODE_DISABLE_WARNINGS=true node --max-old-space-size=4096 -r ts-node/register -r tsconfig-paths/register ./node_modules/webpack/bin/webpack --config src/webpack.config.renderer.dev.dll.ts --progress --profile --colors --display-error-details",
-    "build-main":
-      "cross-env NODE_ENV=production process.env.TS_NODE_DISABLE_WARNINGS=true node --max-old-space-size=4096 -r ts-node/register -r tsconfig-paths/register ./node_modules/webpack/bin/webpack --config src/webpack.config.main.prod.ts --progress --profile --colors --display-error-details",
-    "build-renderer":
-      "cross-env NODE_ENV=production process.env.TS_NODE_DISABLE_WARNINGS=true node --max-old-space-size=4096 -r ts-node/register -r tsconfig-paths/register ./node_modules/webpack/bin/webpack --config src/webpack.config.renderer.prod.ts --progress --profile --colors --display-error-details",
-    "dev":
-      "cross-env START_HOT=1 process.env.TS_NODE_DISABLE_WARNINGS=true npm run start-renderer-dev",
-    "electron-rebuild":
-      "electron-rebuild --parallel --force --types prod,dev,optional --module-dir src",
+    "build-dll": "cross-env NODE_ENV=development process.env.TS_NODE_DISABLE_WARNINGS=true node --max-old-space-size=4096 -r ts-node/register -r tsconfig-paths/register ./node_modules/webpack/bin/webpack --config src/webpack.config.renderer.dev.dll.ts --progress --profile --colors --display-error-details",
+    "build-main": "cross-env NODE_ENV=production process.env.TS_NODE_DISABLE_WARNINGS=true node --max-old-space-size=4096 -r ts-node/register -r tsconfig-paths/register ./node_modules/webpack/bin/webpack --config src/webpack.config.main.prod.ts --progress --profile --colors --display-error-details",
+    "build-renderer": "cross-env NODE_ENV=production process.env.TS_NODE_DISABLE_WARNINGS=true node --max-old-space-size=4096 -r ts-node/register -r tsconfig-paths/register ./node_modules/webpack/bin/webpack --config src/webpack.config.renderer.prod.ts --progress --profile --colors --display-error-details",
+    "dev": "cross-env START_HOT=1 process.env.TS_NODE_DISABLE_WARNINGS=true npm run start-renderer-dev",
+    "electron-rebuild": "electron-rebuild --parallel --force --types prod,dev,optional --module-dir src",
     "package": "npm run build && build --publish never",
     "package-all": "npm run build && build -mwl",
     "package-linux": "npm run build && build --linux",
     "package-win": "npm run build && build --win --x64",
-    "postinstall":
-      "node -r ts-node/register src/scripts/CheckNativeDep.ts && npm run build-dll && electron-builder install-app-deps && node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
+    "postinstall": "node -r ts-node/register src/scripts/CheckNativeDep.ts && npm run build-dll && electron-builder install-app-deps && node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
     "prestart": "npm run build",
     "start": "cross-env NODE_ENV=production electron ./app/main.prod.js",
-    "start-main-dev":
-      "cross-env HOT=1 NODE_ENV=development process.env.TS_NODE_DISABLE_WARNINGS=true electron -r ts-node/register -r tsconfig-paths/register ./src/Main/main.dev",
-    "start-renderer-dev":
-      "cross-env NODE_ENV=development node -r ts-node/register -r tsconfig-paths/register ./node_modules/webpack-dev-server/bin/webpack-dev-server --config src/webpack.config.renderer.dev.ts",
-    "installer":
-      "npm run package && node -r ts-node/register -r tsconfig-paths/register src/Main/utils/build.ts",
+    "start-main-dev": "cross-env HOT=1 NODE_ENV=development process.env.TS_NODE_DISABLE_WARNINGS=true electron -r ts-node/register -r tsconfig-paths/register ./src/Main/main.dev",
+    "start-renderer-dev": "cross-env NODE_ENV=development node -r ts-node/register -r tsconfig-paths/register ./node_modules/webpack-dev-server/bin/webpack-dev-server --config src/webpack.config.renderer.dev.ts",
+    "installer": "npm run package && node -r ts-node/register -r tsconfig-paths/register src/Main/utils/build.ts",
     "debug_prod": "cross-env DEBUG_PROD=true npm start",
-    "analyze-build": "cross-env OPEN_ANALYZER=true npm run build"
+    "analyze-build": "cross-env OPEN_ANALYZER=true npm run build",
+    "test": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 node --trace-warnings -r ts-node/register ./src/scripts/RunTests.ts",
+    "test-all": "npm run build && npm run test && npm run test-e2e",
+    "test-e2e": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 node --trace-warnings -r ts-node/register ./src/scripts/RunTests.ts e2e",
+    "test-watch": "npm test -- --watch"
   },
   "browserslist": "electron 1.6",
   "main": "./src/main.prod.js",
@@ -61,10 +55,15 @@
       ]
     },
     "win": {
-      "target": ["dir"]
+      "target": [
+        "dir"
+      ]
     },
     "linux": {
-      "target": ["deb", "AppImage"],
+      "target": [
+        "deb",
+        "AppImage"
+      ],
       "category": "Development"
     },
     "directories": {
@@ -75,8 +74,7 @@
   },
   "repository": {
     "type": "git",
-    "url":
-      "git+https://github.com/ManuKle/electron-react-typescript-boilerplate.git"
+    "url": "git+https://github.com/ManuKle/electron-react-typescript-boilerplate.git"
   },
   "author": {
     "name": "Manuel Klettke",
@@ -85,8 +83,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url":
-      "https://github.com/ManuKle/electron-react-typescript-boilerplate/issues"
+    "url": "https://github.com/ManuKle/electron-react-typescript-boilerplate/issues"
   },
   "keywords": [
     "electron",
@@ -99,27 +96,43 @@
     "hot",
     "reload"
   ],
-  "homepage":
-    "https://github.com/ManuKle/electron-react-typescript-boilerplate#readme",
+  "homepage": "https://github.com/ManuKle/electron-react-typescript-boilerplate#readme",
   "jest": {
-    "moduleFileExtensions": ["ts", "tsx", "js", "json"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
     "setupFiles": [
       "<rootDir>/src/Main/utils/tempPolyFills.ts",
       "<rootDir>/src/Main/utils/enzyme_setup.ts",
       "<rootDir>/src/scripts/CheckBuildsExist.ts"
     ],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testPathIgnorePatterns": ["/node_modules/", "/lib/"],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/lib/"
+    ],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(tsx?)$",
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/fileMock.js",
-      "\\.(css|less|sass|scss)$": "identity-obj-proxy"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/fileMock.js",
+      "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+      "@act/(.*)": "<rootDir>/src/Renderer/actions/$1", 
+      "@con/(.*)": "<rootDir>/src/Renderer/containers/$1", 
+      "@com/(.*)": "<rootDir>/src/Renderer/components/$1", 
+      "@red/(.*)": "<rootDir>/src/Renderer/reducers/$1", 
+      "@utils/(.*)": "<rootDir>/src/Main/uitls/$1"
     },
-    "moduleDirectories": ["node_modules", "src/node_modules"]
+    "moduleDirectories": [
+      "node_modules",
+      "src/node_modules"
+    ]
   },
   "devDependencies": {
     "@types/copy-webpack-plugin": "^4.0.1",
@@ -205,6 +218,7 @@
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
+    "@types/cross-spawn": "^6.0.0",
     "devtron": "^1.4.0",
     "electron-debug": "^1.5.0",
     "font-awesome": "^4.7.0",
