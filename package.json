@@ -127,7 +127,7 @@
       "@con/(.*)": "<rootDir>/src/Renderer/containers/$1", 
       "@com/(.*)": "<rootDir>/src/Renderer/components/$1", 
       "@red/(.*)": "<rootDir>/src/Renderer/reducers/$1", 
-      "@utils/(.*)": "<rootDir>/src/Main/uitls/$1"
+      "@utils/(.*)": "<rootDir>/src/Main/utils/$1"
     },
     "moduleDirectories": [
       "node_modules",
