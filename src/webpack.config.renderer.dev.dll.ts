@@ -174,7 +174,7 @@ export default merge.smart(baseConfig as any, {
   },
 
   resolve: {
-    modules: ["node_modules", "app"]
+    modules: ["node_modules", "src"]
   },
 
   entry: {
@@ -213,7 +213,7 @@ export default merge.smart(baseConfig as any, {
     new webpack.LoaderOptionsPlugin({
       debug: true,
       options: {
-        context: path.resolve(process.cwd(), "app"),
+        context: path.resolve(process.cwd(), "src"),
         output: {
           path: path.resolve(process.cwd(), "dll")
         }

@@ -2,9 +2,9 @@
   "javascript.validate.enable": false,
   "search.exclude": {
     ".git": true,
-    "app/dist": true,
-    "app/main.prod.js": true,
-    "app/main.prod.js.map": true,
+    "src/dist": true, 
+    "src/main.prod.js": true, 
+    "src/main.prod.js.map": true,
     "dll": true,
     "release": true,
     "node_modules": true,

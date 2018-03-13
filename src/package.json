@@ -4,7 +4,7 @@
   "version": "0.1.1",
   "description":
     "Electron application boilerplate based on Typescript, React, React Router, Webpack, React Hot Loader for rapid application development",
-  "main": "../app/main.prod.js",
+    "main": "./main.prod.js",
   "author": {
     "name": "Manuel Klettke",
     "email": "manuelklettke@web.de",

@@ -34,7 +34,10 @@ src/node_modules
 
 # App packaged
 release
-app
+src/dist
+src/app.html
+src/main.prod.js
+src/main.prod.js.map
 dll
 
 .idea

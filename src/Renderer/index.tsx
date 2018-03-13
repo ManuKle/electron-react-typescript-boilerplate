@@ -2,19 +2,10 @@ import * as React from "react";
 import { render } from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import Root from "./containers/Root";
-import prodStore from "./store/configureStore.prod";
-import devStore from "./store/configureStore.dev";
 import "./app.global.css";
+const { configureStore, history } = require("./store/configureStore");
 
-const configureStore =
-  process.env.NODE_ENV === "production"
-    ? prodStore.configureStore
-    : devStore.configureStore;
-
-const history =
-  process.env.NODE_ENV === "production" ? prodStore.history : devStore.history;
-
-const store = configureStore();
+const store = configureStore()
 
 render(
   <AppContainer>
