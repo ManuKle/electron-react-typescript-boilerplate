@@ -6,7 +6,7 @@ import * as path from "path";
 import * as webpack from "webpack";
 import { TsConfigPathsPlugin, CheckerPlugin } from "awesome-typescript-loader";
 // @ts-ignore
-import { dependencies as externals } from "./package.json";
+import { dependencies as externals } from "../app/package.json";
 
 const baseConfig = {
   externals: Object.keys(externals || {}),

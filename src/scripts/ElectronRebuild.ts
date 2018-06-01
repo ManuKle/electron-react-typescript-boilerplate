@@ -2,7 +2,7 @@ import * as path from "path";
 import * as fs from "fs";
 import { execSync } from "child_process";
 // @ts-ignore
-import { dependencies } from "../package.json";
+import { dependencies } from "../../app/package.json";
 
 const nodeModulesPath = path.join(__dirname, "..", "node_modules");
 

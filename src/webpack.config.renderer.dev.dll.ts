@@ -6,7 +6,7 @@ import * as webpack from "webpack";
 import * as path from "path";
 import * as merge from "webpack-merge";
 // @ts-ignore
-import { dependencies } from "./package.json";
+import { dependencies } from "../app/package.json";
 import { default as baseConfig } from "./webpack.config.base";
 import { default as CheckNodeEnv } from "./scripts/CheckNodeEnv";
 

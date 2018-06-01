@@ -11,7 +11,8 @@
     "url": "https://github.com/ManuKle"
   },
   "scripts": {
-    "electron-rebuild": "node -r ts-node/register ./scripts/ElectronRebuild.ts",
+    "electron-rebuild":
+      "node -r ts-node/register ../src/scripts/ElectronRebuild.ts",
     "postinstall": "npm run electron-rebuild"
   },
   "license": "MIT",

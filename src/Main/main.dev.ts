@@ -67,7 +67,7 @@ app.on("ready", async () => {
 
   if (process.env.NODE_ENV === "development") {
     mainWindow!.loadURL(
-      `file:// ${path.resolve(__dirname, "..", "Renderer")}/app.html`
+      `file://${path.resolve(__dirname, "..", "Renderer")}/app.html`
     );
   } else {
     mainWindow.loadURL(`file://${__dirname}/app.html`);
